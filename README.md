@@ -25,7 +25,7 @@ Both **Embossed** and **UnEmbossed** formats are supported.
 
 Unlike other implementations we're not doing brute force OCR (trying multiple images/parameters until match). You only need a single image to get the correct result. There is no template matching which means the data could be malformed or at any position and you'll still have the correct result ([WYSIWYG](https://en.wikipedia.org/wiki/WYSIWYG>)).
 
-Next video shows [CCardVideoRecognizer sample](#sample-application-videorecognizer-android) Running on Android: <br />
+Next [video](https://youtu.be/BBI_3AJIc1c) ([https://youtu.be/BBI_3AJIc1c](https://youtu.be/BBI_3AJIc1c)) shows [CCardVideoRecognizer sample](#sample-application-videorecognizer-android) Running on Android: <br />
 [![CCardVideoRecognizer Running on Android](https://img.youtube.com/vi/BBI_3AJIc1c/maxresdefault.jpg)](https://www.youtube.com/watch?v=BBI_3AJIc1c)
    
 <hr />

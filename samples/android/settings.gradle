@@ -1,0 +1,2 @@
+include ':sdk', ':benchmark', ':ccardvideorecognizer'
+rootProject.name='ultimateCreditCard'

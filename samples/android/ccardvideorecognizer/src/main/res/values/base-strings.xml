@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (C) 2016-2020 Doubango AI <https://www.doubango.org>
+ License: For non-commercial use only
+ Source code: https://github.com/DoubangoTelecom/ultimateCreditCard-SDK
+ WebSite: https://www.doubango.org/webapps/credit-card-ocr/
+-->
+
+<resources>
+    <string name="app_name">CCardVideoRecognizer</string>
+    <string name="intro_message">
+        <![CDATA[
+            
+            This sample demonstrates how to use the Credit Card OCR SDK to recognize cards on video stream
+        
+        ]]>
+    </string>
+</resources>

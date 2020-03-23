@@ -82,7 +82,7 @@ public abstract class CCardActivity extends AppCompatActivity implements CCardCa
                 getAssets(),
                 config.toString()
         ));
-        Log.i(TAG,"MRZ engine initialized: " + CCardUtils.resultToString(mrzResult));
+        Log.i(TAG,"CCARD engine initialized: " + CCardUtils.resultToString(mrzResult));
 
         // Activate the license
         if (isActivationPossible && tokenFile.isEmpty()) {
@@ -111,7 +111,7 @@ public abstract class CCardActivity extends AppCompatActivity implements CCardCa
         // block until the end.
         // https://www.doubango.org/SDKs/mrz/docs/cpp-api.html#_CPPv4N14ultimateMrzSdk15UltCreditCardSdkEngine6deInitEv
         final UltCreditCardSdkResult result = CCardUtils.assertIsOk(UltCreditCardSdkEngine.deInit());
-        Log.i(TAG,"MRZ engine deInitialized: " + CCardUtils.resultToString(result));
+        Log.i(TAG,"CCARD engine deInitialized: " + CCardUtils.resultToString(result));
 
         super.onDestroy();
     }

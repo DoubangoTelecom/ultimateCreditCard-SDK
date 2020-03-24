@@ -64,27 +64,25 @@ public abstract class CCardActivity extends AppCompatActivity implements CCardCa
         dummyFile.delete();
 
         // Init the engine
-        final boolean isActivationPossible = !getActivationServerUrl().isEmpty() && !getActivationMasterOrSlaveKey().isEmpty();
         final JSONObject config = getJsonConfig();
-        String tokenFile = "";
-        if (isActivationPossible) {
-            // Retrieve previously stored key from internal storage
-            tokenFile = CCardLicenseActivator.tokenFile(this);
-            if (!tokenFile.isEmpty()) {
-                try {
-                    config.put("license_token_data", CCardLicenseActivator.tokenData(tokenFile));
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+        // Retrieve previously stored key from internal storage
+        String tokenFile = CCardLicenseActivator.tokenFile(this);
+        if (!tokenFile.isEmpty()) {
+            try {
+                config.put("license_token_data", CCardLicenseActivator.tokenData(tokenFile));
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
         }
-        final UltCreditCardSdkResult mrzResult = CCardUtils.assertIsOk(UltCreditCardSdkEngine.init(
+
+        final UltCreditCardSdkResult ccardResult = CCardUtils.assertIsOk(UltCreditCardSdkEngine.init(
                 getAssets(),
                 config.toString()
         ));
-        Log.i(TAG,"CCARD engine initialized: " + CCardUtils.resultToString(mrzResult));
+        Log.i(TAG,"CCARD engine initialized: " + CCardUtils.resultToString(ccardResult));
 
         // Activate the license
+        final boolean isActivationPossible = !getActivationServerUrl().isEmpty() && !getActivationMasterOrSlaveKey().isEmpty();
         if (isActivationPossible && tokenFile.isEmpty()) {
             // Generate the license key and store it to the internal storage for next times
             tokenFile = CCardLicenseActivator.activate(this, getActivationServerUrl(), getActivationMasterOrSlaveKey(), false);
@@ -101,6 +99,9 @@ public abstract class CCardActivity extends AppCompatActivity implements CCardCa
                 ));
             }
         }
+
+        // WarmUp to avoid slow inference on the first detection
+        CCardUtils.assertIsOk(UltCreditCardSdkEngine.warmUp(ULTCCARD_SDK_IMAGE_TYPE.ULTCCARD_SDK_IMAGE_TYPE_YUV420P));
     }
 
     @Override

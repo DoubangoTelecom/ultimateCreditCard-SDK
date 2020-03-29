@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (C) 2016-2020 Doubango AI <https://www.doubango.org>
  * License: For non-commercial use only
  * Source code: https://github.com/DoubangoTelecom/ultimateCreditCard-SDK
@@ -44,7 +44,7 @@ public class CCardBenchmarkActivity extends AppCompatActivity {
      * Default: "info"
      * type: string
      * pattern: "verbose" | "info" | "warn" | "error" | "fatal"
-     * More info: https://www.doubango.org/SDKs/ccard/docs/Configuration_options.html#debug-level
+     * More info: https://www.doubango.org/SDKs/credit-card-ocr/docs/Configuration_options.html#debug-level
      */
     static final String CONFIG_DEBUG_LEVEL = "info";
 
@@ -54,7 +54,7 @@ public class CCardBenchmarkActivity extends AppCompatActivity {
      * Default: false
      * type: bool
      * pattern: true | false
-     * More info: https://www.doubango.org/SDKs/ccard/docs/Configuration_options.html#debug-write-input-image-enabled
+     * More info: https://www.doubango.org/SDKs/credit-card-ocr/docs/Configuration_options.html#debug-write-input-image-enabled
      */
     static final boolean CONFIG_DEBUG_WRITE_INPUT_IMAGE = false; // must be false unless you're debugging the code
 
@@ -67,7 +67,7 @@ public class CCardBenchmarkActivity extends AppCompatActivity {
      * Default: -1
      * type: int
      * pattern: [-inf, +inf]
-     * More info: https://www.doubango.org/SDKs/ccard/docs/Configuration_options.html#num-threads
+     * More info: https://www.doubango.org/SDKs/credit-card-ocr/docs/Configuration_options.html#num-threads
      */
     static final int CONFIG_NUM_THREADS = -1;
 
@@ -80,7 +80,7 @@ public class CCardBenchmarkActivity extends AppCompatActivity {
      * Default: true
      * type: bool
      * pattern: true | false
-     * More info: https://www.doubango.org/SDKs/ccard/docs/Configuration_options.html#gpgpu-enabled
+     * More info: https://www.doubango.org/SDKs/credit-card-ocr/docs/Configuration_options.html#gpgpu-enabled
      */
     static final boolean CONFIG_GPGPU_ENABLED = true;
 
@@ -90,7 +90,7 @@ public class CCardBenchmarkActivity extends AppCompatActivity {
      * Default: 0.5f
      * type: float
      * pattern: ]0.f, 1.f]
-     * More info: https://www.doubango.org/SDKs/ccard/docs/Configuration_options.html#detect-minscore
+     * More info: https://www.doubango.org/SDKs/credit-card-ocr/docs/Configuration_options.html#detect-minscore
      */
     static final double CONFIG_DETECT_MINSCORE = 0.5; // 50%
 
@@ -101,7 +101,7 @@ public class CCardBenchmarkActivity extends AppCompatActivity {
      * Default: [0.f, 0.f, 0.f, 0.f]
      * type: float[4]
      * pattern: [left, width, top, height]
-     * More info: https://www.doubango.org/SDKs/ccard/docs/Configuration_options.html#detect-roi
+     * More info: https://www.doubango.org/SDKs/credit-card-ocr/docs/Configuration_options.html#detect-roi
      */
     static final List<Float> CONFIG_DETECT_ROI = Arrays.asList(0.f, 0.f, 0.f, 0.f);
 
@@ -112,7 +112,7 @@ public class CCardBenchmarkActivity extends AppCompatActivity {
      * Default: 0.2f
      * type: float
      * pattern: ]0.f, 1.f]
-     * More info: https://www.doubango.org/SDKs/ccard/docs/Configuration_options.html#recogn-minscore
+     * More info: https://www.doubango.org/SDKs/credit-card-ocr/docs/Configuration_options.html#recogn-minscore
      */
     static final double CONFIG_RECOGN_MINSCORE = 0.3; // 20%
 
@@ -130,7 +130,7 @@ public class CCardBenchmarkActivity extends AppCompatActivity {
      * Default: "median"
      * Recommended: "min"
      * type: string
-     *  More info: https://www.doubango.org/SDKs/ccard/docs/Configuration_options.html#recogn-score-type
+     *  More info: https://www.doubango.org/SDKs/credit-card-ocr/docs/Configuration_options.html#recogn-score-type
      */
     static final String CONFIG_RECOGN_SCORE_TYPE = "min";
 
@@ -139,12 +139,12 @@ public class CCardBenchmarkActivity extends AppCompatActivity {
      * A plate is distorted when it’s skewed and/or slanted. The rectification layer will deslant and deskew the plate to make it straight which make the recognition more accurate.
      * Please note that you only need to enable this feature when the license plates are highly distorted. The implementation can handle moderate distortion without a rectification layer.
      * The rectification layer adds many CPU intensive operations to the pipeline which decrease the frame rate.
-     * More info on the rectification layer could be found at https://www.doubango.org/SDKs/ccard/docs/Rectification_layer.html#rectificationlayer
+     * More info on the rectification layer could be found at https://www.doubango.org/SDKs/credit-card-ocr/docs/Rectification_layer.html#rectificationlayer
      * JSON name: "recogn_rectify_enabled"
      * Default: false
      * Recommended: false
      * type: string
-     * More info at https://www.doubango.org/SDKs/ccard/docs/Configuration_options.html#recogn-rectify-enabled
+     * More info at https://www.doubango.org/SDKs/credit-card-ocr/docs/Configuration_options.html#recogn-rectify-enabled
      */
     static final boolean CONFIG_RECOGN_RECTIFY_ENABLED = false;
 
@@ -275,7 +275,7 @@ public class CCardBenchmarkActivity extends AppCompatActivity {
     }
 
     final String getConfig() {
-        // More information on the JSON config at https://www.doubango.org/SDKs/ccard/docs/Configuration_options.html
+        // More information on the JSON config at https://www.doubango.org/SDKs/credit-card-ocr/docs/Configuration_options.html
         JSONObject config = new JSONObject();
         try {
             config.put("debug_level", CONFIG_DEBUG_LEVEL);

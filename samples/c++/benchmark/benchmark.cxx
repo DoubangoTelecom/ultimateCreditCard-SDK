@@ -2,10 +2,10 @@
 * File author: Mamadou DIOP (Doubango Telecom, France).
 * License: For non commercial use only.
 * Source code: https://github.com/DoubangoTelecom/ultimateCreditCard-SDK
-* WebSite: https://www.doubango.org/webapps/alpr/
+* WebSite: https://www.doubango.org/webapps/credit-card-ocr/
 */
 
-// More info about benchmark application: https://www.doubango.org/SDKs/ccard/docs/Benchmark.html
+// More info about benchmark application: https://www.doubango.org/SDKs/credit-card-ocr/docs/Benchmark.html
 /*
 	https://github.com/DoubangoTelecom/ultimateCreditCard/blob/master/SDK_dist/samples/c++/benchmark/README.md
 	Usage: 

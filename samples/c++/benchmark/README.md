@@ -82,7 +82,7 @@ benchmark \
 ```
 Options surrounded with **[]** are optional.
 - `--positive` Path to an image (JPEG/PNG/BMP) with a creit card. This image will be used to evaluate the recognizer. You can use default image at [../../../assets/images/revolut.jpg](../../../assets/images/revolut.jpg).
-- `--negative` Path to an image (JPEG/PNG/BMP) without a license plate. This image will be used to evaluate the decoder. You can use default image at [../../../assets/images/paymentsense.jpg](../../../assets/images/paymentsense.jpg).
+- `--negative` Path to an image (JPEG/PNG/BMP) without a credit card. This image will be used to evaluate the decoder. You can use default image at [../../../assets/images/paymentsense.jpg](../../../assets/images/paymentsense.jpg).
 - `--assets` Path to the [assets](../../../assets) folder containing the configuration files and models. Default value is the current folder.
 - `--loops` Number of times to run the processing pipeline.
 - `--rate` Percentage value within [0.0, 1.0] defining the positive rate. The positive rate defines the percentage of images with a plate.

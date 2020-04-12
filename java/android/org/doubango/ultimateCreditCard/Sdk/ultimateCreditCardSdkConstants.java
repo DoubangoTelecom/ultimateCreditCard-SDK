@@ -11,5 +11,5 @@ package org.doubango.ultimateCreditCard.Sdk;
 public interface ultimateCreditCardSdkConstants {
   public final static int ULTCCARD_SDK_VERSION_MAJOR = 2;
   public final static int ULTCCARD_SDK_VERSION_MINOR = 0;
-  public final static int ULTCCARD_SDK_VERSION_MICRO = 0;
+  public final static int ULTCCARD_SDK_VERSION_MICRO = 1;
 }

@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (C) 2016-2020 Doubango AI <https://www.doubango.org>
  * License: For non-commercial use only
  * Source code: https://github.com/DoubangoTelecom/ultimateCreditCard-SDK
@@ -60,7 +60,7 @@ public class CCardBenchmarkActivity extends AppCompatActivity {
 
     /**
      * Defines the maximum number of threads to use.
-     * You should not change this value unless you know what you’re doing. Set to -1 to let the SDK choose the right value.
+     * You should not change this value unless you know what you're doing. Set to -1 to let the SDK choose the right value.
      * The right value the SDK will choose will likely be equal to the number of virtual cores.
      * For example, on an octa-core device the maximum number of threads will be 8.
      * JSON name: "num_threads"
@@ -75,7 +75,7 @@ public class CCardBenchmarkActivity extends AppCompatActivity {
      * Whether to enable GPGPU computing. This will enable or disable GPGPU computing on the computer vision and deep learning libraries.
      * On ARM devices this flag will be ignored when fixed-point (integer) math implementation exist for a well-defined function.
      * For example, this function will be disabled for the bilinear scaling as we have a fixed-point SIMD accelerated implementation.
-     * Same for many deep learning parts as we’re using QINT8 quantized inference.
+     * Same for many deep learning parts as we're using QINT8 quantized inference.
      * JSON name: "gpgpu_enabled"
      * Default: true
      * type: bool
@@ -135,8 +135,8 @@ public class CCardBenchmarkActivity extends AppCompatActivity {
     static final String CONFIG_RECOGN_SCORE_TYPE = "min";
 
     /**
-     * Whether to add rectification layer between the detector’s output and the recognizer’s input. A rectification layer is used to suppress the distortion.
-     * A plate is distorted when it’s skewed and/or slanted. The rectification layer will deslant and deskew the plate to make it straight which make the recognition more accurate.
+     * Whether to add rectification layer between the detector's output and the recognizer's input. A rectification layer is used to suppress the distortion.
+     * A plate is distorted when it's skewed and/or slanted. The rectification layer will deslant and deskew the plate to make it straight which make the recognition more accurate.
      * Please note that you only need to enable this feature when the license plates are highly distorted. The implementation can handle moderate distortion without a rectification layer.
      * The rectification layer adds many CPU intensive operations to the pipeline which decrease the frame rate.
      * More info on the rectification layer could be found at https://www.doubango.org/SDKs/credit-card-ocr/docs/Rectification_layer.html#rectificationlayer

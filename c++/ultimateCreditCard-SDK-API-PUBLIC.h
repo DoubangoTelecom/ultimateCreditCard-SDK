@@ -14,8 +14,8 @@ ultimateCreditCard SDK public header
 #include <string>
 
 #define ULTCCARD_SDK_VERSION_MAJOR		2
-#define ULTCCARD_SDK_VERSION_MINOR		0
-#define ULTCCARD_SDK_VERSION_MICRO		1
+#define ULTCCARD_SDK_VERSION_MINOR		1
+#define ULTCCARD_SDK_VERSION_MICRO		0
 
 // Windows's symbols export
 #if defined(SWIG)
@@ -136,29 +136,35 @@ namespace ultimateCreditCardSdk
 		*
 		*/
 		ULTCCARD_SDK_IMAGE_TYPE_YUV444P,
+
+		/*! Grayscale image with single channel (luminance only). Each pixel is stored in single byte (8 bit Y samples).
+		*
+		* Available since: 2.1.0
+		*/
+		ULTCCARD_SDK_IMAGE_TYPE_Y,
 	};
 
 	/*! Result returned by the \ref UltCreditCardSdkEngine "engine" at initialization, deInitialization and processing stages.
 	*/
-	class UltCreditCardSdkResult {
+	class ULTIMATE_CCARD_SDK_PUBLIC_API UltCreditCardSdkResult {
 	public:
+		UltCreditCardSdkResult();
+		UltCreditCardSdkResult(const int code, const char* phrase, const char* json, const size_t numZones = 0);
+		UltCreditCardSdkResult(const UltCreditCardSdkResult& other);
+		virtual ~UltCreditCardSdkResult();
 #if !defined(SWIG)
-		UltCreditCardSdkResult() = delete;
-#endif /* SWIG */
-		UltCreditCardSdkResult(const int code, const char* phrase, const char* json, const size_t numCards = 0)
-		: code_(code), phrase_(phrase), json_(json), numCards_(numCards) {}
-		
-		virtual ~UltCreditCardSdkResult() {}
+		UltCreditCardSdkResult& operator=(const UltCreditCardSdkResult& other) { return operatorAssign(other); }
+#endif
 
 		/*! The result code. 0 if success, nonzero otherwise.
 		*/
 		inline int code()const { return code_; }
 		/*! Short description for the \ref code.
 		*/
-		inline const char* phrase()const { return phrase_.c_str(); }
+		inline const char* phrase()const { return phrase_; }
 		/*! The credit cards as JSON content string. May be null if no card found.
 		*/
-		inline const char* json()const { return json_.c_str(); }
+		inline const char* json()const { return json_; }
 		/*! Number of credit cards in \ref json string. This is a helper function to quickly check whether the result contains credit cards
 			without parsing the \ref json string.
 		*/
@@ -170,10 +176,17 @@ namespace ultimateCreditCardSdk
 		static UltCreditCardSdkResult bodyless(const int code, const char* phrase) { return UltCreditCardSdkResult(code, phrase, ""); }
 		static UltCreditCardSdkResult bodylessOK() { return UltCreditCardSdkResult(0, "OK", ""); }
 #endif /* SWIG */
+
+	private:
+		void ctor(const int code, const char* phrase, const char* json, const size_t numZones);
+#if !defined(SWIG)
+		UltCreditCardSdkResult& operatorAssign(const UltCreditCardSdkResult& other);
+#endif /* SWIG */
+
 	private:
 		int code_;
-		std::string phrase_;
-		std::string json_;
+		char* phrase_ = nullptr;
+		char* json_ = nullptr;
 		size_t numCards_;
 	};
 

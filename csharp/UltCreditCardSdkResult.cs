@@ -41,10 +41,17 @@ public class UltCreditCardSdkResult : IDisposable {
     }
   }
 
-  public UltCreditCardSdkResult(int code, string phrase, string json, uint numCards) : this(ultimateCreditCardSdkPINVOKE.new_UltCreditCardSdkResult__SWIG_0(code, phrase, json, numCards), true) {
+  public UltCreditCardSdkResult() : this(ultimateCreditCardSdkPINVOKE.new_UltCreditCardSdkResult__SWIG_0(), true) {
   }
 
-  public UltCreditCardSdkResult(int code, string phrase, string json) : this(ultimateCreditCardSdkPINVOKE.new_UltCreditCardSdkResult__SWIG_1(code, phrase, json), true) {
+  public UltCreditCardSdkResult(int code, string phrase, string json, uint numZones) : this(ultimateCreditCardSdkPINVOKE.new_UltCreditCardSdkResult__SWIG_1(code, phrase, json, numZones), true) {
+  }
+
+  public UltCreditCardSdkResult(int code, string phrase, string json) : this(ultimateCreditCardSdkPINVOKE.new_UltCreditCardSdkResult__SWIG_2(code, phrase, json), true) {
+  }
+
+  public UltCreditCardSdkResult(UltCreditCardSdkResult other) : this(ultimateCreditCardSdkPINVOKE.new_UltCreditCardSdkResult__SWIG_3(UltCreditCardSdkResult.getCPtr(other)), true) {
+    if (ultimateCreditCardSdkPINVOKE.SWIGPendingException.Pending) throw ultimateCreditCardSdkPINVOKE.SWIGPendingException.Retrieve();
   }
 
   public int code() {

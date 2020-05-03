@@ -203,7 +203,7 @@ int main(int argc, char *argv[])
 	}
 	const std::chrono::high_resolution_clock::time_point timeEnd = std::chrono::high_resolution_clock::now();
 	const double elapsedTimeInMillis = std::chrono::duration_cast<std::chrono::duration<double >>(timeEnd - timeStart).count() * 1000.0;
-	ULTCCARD_SDK_PRINT_INFO("Elapsed time (ALPR) = [[[ %lf millis ]]]", elapsedTimeInMillis);
+	ULTCCARD_SDK_PRINT_INFO("Elapsed time (CCARD) = [[[ %lf millis ]]]", elapsedTimeInMillis);
 
 	// Print latest result
 	const std::string& json_ = result.json();

@@ -35,12 +35,20 @@ public class UltCreditCardSdkResult {
     }
   }
 
-  public UltCreditCardSdkResult(int code, String phrase, String json, long numCards) {
-    this(ultimateCreditCardSdkJNI.new_UltCreditCardSdkResult__SWIG_0(code, phrase, json, numCards), true);
+  public UltCreditCardSdkResult() {
+    this(ultimateCreditCardSdkJNI.new_UltCreditCardSdkResult__SWIG_0(), true);
+  }
+
+  public UltCreditCardSdkResult(int code, String phrase, String json, long numZones) {
+    this(ultimateCreditCardSdkJNI.new_UltCreditCardSdkResult__SWIG_1(code, phrase, json, numZones), true);
   }
 
   public UltCreditCardSdkResult(int code, String phrase, String json) {
-    this(ultimateCreditCardSdkJNI.new_UltCreditCardSdkResult__SWIG_1(code, phrase, json), true);
+    this(ultimateCreditCardSdkJNI.new_UltCreditCardSdkResult__SWIG_2(code, phrase, json), true);
+  }
+
+  public UltCreditCardSdkResult(UltCreditCardSdkResult other) {
+    this(ultimateCreditCardSdkJNI.new_UltCreditCardSdkResult__SWIG_3(UltCreditCardSdkResult.getCPtr(other), other), true);
   }
 
   public int code() {

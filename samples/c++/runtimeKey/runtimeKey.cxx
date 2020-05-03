@@ -6,7 +6,7 @@
 */
 
 /*
-	https://github.com/DoubangoTelecom/ultimateCreditCard/blob/master/SDK_dist/samples/c++/licenser/README.md
+	https://github.com/DoubangoTelecom/ultimateCreditcard/blob/master/SDK_dist/samples/c++/licenser/README.md
 	Usage: 
 		licenser \
 			[--json <json-output:bool>] \

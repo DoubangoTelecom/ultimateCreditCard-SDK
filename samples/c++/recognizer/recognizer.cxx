@@ -19,7 +19,6 @@
 	Example:
 		recognizer \
 			--image C:/Projects/GitHub/ultimate/ultimateCreditCard/SDK_dist/assets/images/revolut.jpg \
-			--parallel true \
 			--rectify false \
 			--assets C:/Projects/GitHub/ultimate/ultimateCreditCard/SDK_dist/assets \
 			--tokenfile C:/Projects/GitHub/ultimate/ultimateCreditCard/SDK_dev/tokens/windows-iMac.lic

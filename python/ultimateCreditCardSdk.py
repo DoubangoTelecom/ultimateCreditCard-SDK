@@ -86,6 +86,7 @@ ULTCCARD_SDK_IMAGE_TYPE_YUV420P = _ultimateCreditCardSdk.ULTCCARD_SDK_IMAGE_TYPE
 ULTCCARD_SDK_IMAGE_TYPE_YVU420P = _ultimateCreditCardSdk.ULTCCARD_SDK_IMAGE_TYPE_YVU420P
 ULTCCARD_SDK_IMAGE_TYPE_YUV422P = _ultimateCreditCardSdk.ULTCCARD_SDK_IMAGE_TYPE_YUV422P
 ULTCCARD_SDK_IMAGE_TYPE_YUV444P = _ultimateCreditCardSdk.ULTCCARD_SDK_IMAGE_TYPE_YUV444P
+ULTCCARD_SDK_IMAGE_TYPE_Y = _ultimateCreditCardSdk.ULTCCARD_SDK_IMAGE_TYPE_Y
 class UltCreditCardSdkResult(_object):
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, UltCreditCardSdkResult, name, value)

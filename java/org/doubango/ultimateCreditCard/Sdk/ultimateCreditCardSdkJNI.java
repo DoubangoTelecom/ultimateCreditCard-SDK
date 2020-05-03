@@ -14,8 +14,10 @@ public class ultimateCreditCardSdkJNI {
     System.loadLibrary("ultimateCreditCard_SDK");
   }
 
-  public final static native long new_UltCreditCardSdkResult__SWIG_0(int jarg1, String jarg2, String jarg3, long jarg4);
-  public final static native long new_UltCreditCardSdkResult__SWIG_1(int jarg1, String jarg2, String jarg3);
+  public final static native long new_UltCreditCardSdkResult__SWIG_0();
+  public final static native long new_UltCreditCardSdkResult__SWIG_1(int jarg1, String jarg2, String jarg3, long jarg4);
+  public final static native long new_UltCreditCardSdkResult__SWIG_2(int jarg1, String jarg2, String jarg3);
+  public final static native long new_UltCreditCardSdkResult__SWIG_3(long jarg1, UltCreditCardSdkResult jarg1_);
   public final static native void delete_UltCreditCardSdkResult(long jarg1);
   public final static native int UltCreditCardSdkResult_code(long jarg1, UltCreditCardSdkResult jarg1_);
   public final static native String UltCreditCardSdkResult_phrase(long jarg1, UltCreditCardSdkResult jarg1_);

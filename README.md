@@ -6,14 +6,16 @@
 	- [Trying the samples](#trying-the-samples-android)
 	- [Adding the SDK to your project](#adding-the-sdk-to-your-project-android)
 	- [Using the Java API](#using-the-java-api-android)
- - [Raspberry Pi (Raspbian OS) and others](#others)
+ - [Raspberry Pi (Raspbian OS), Linux, Windows and others](#others)
  	- [Sample applications](#sample-applications-others)
 		- [Benchmark](#sample-application-benchmark-others)
 		- [Recognizer](#sample-application-recognizer-others)
+	- [Using the C++ API](#using-the-cpp-api-others)
  - [Getting help](#technical-questions)
   
  - Full documentation at https://www.doubango.org/SDKs/credit-card-ocr/docs/
  - Online demo at https://www.doubango.org/webapps/credit-card-ocr/
+ - Open source Computer Vision library: https://github.com/DoubangoTelecom/compv
   
 <hr />
  
@@ -35,7 +37,7 @@ You can reach **100% precision** on the credit card number recognition using [va
 The number of use cases in FinTech industry are countless: **Scan To Pay, Helping visually impaired users, Online shopping speed-up, payment forms auto-filling, better user experience, reducing typing errors, process automation...**
 
 Don't take our word for it, come check our implementation. **No registration, license key or internet connection is required**, just clone the code and start coding/testing. Everything runs on the device, no data is leaving your computer. 
-The code released here comes with many ready-to-use samples for [Android](#sample-applications-android) and [Raspberry Pi](#sample-applications-others) to help you get started easily. 
+The code released here comes with many ready-to-use samples for [Android](#sample-applications-android), [Raspberry Pi, Windows and Linux](#sample-applications-others) to help you get started easily. 
 
 You can also check our online [cloud-based implementation](https://www.doubango.org/webapps/credit-card-ocr/) (*no registration required*) to check out the accuracy and precision before starting to play with the SDK.
 
@@ -188,25 +190,76 @@ The C++ API is defined [here](https://www.doubango.org/SDKs/credit-card-ocr/docs
 Again, please check the sample applications for [Android](#sample-applications-android) and [Raspberry Pi](#sample-applications-others) and [full documentation](https://www.doubango.org/SDKs/credit-card-ocr/docs/) for more information.
 
 <a name="others"></a>
-# Raspberry Pi (Raspbian OS) and others #
+# Raspberry Pi (Raspbian OS), Linux, Windows and others #
 
 <a name="sample-applications-others"></a>
-## Sample applications (Raspberry Pi) ##
+## Sample applications (Others) ##
 The source code comes with #2 [C++ sample applications](samples/c++): [Benchmark](#sample-application-benchmark-others) and [Recognizer](#sample-application-recognizer-others). These sample applications can be used on all supported platforms: **Android**, **Windows**, **Raspberry pi**, **iOS**, **OSX**, **Linux**...
 
 <a name="sample-application-benchmark-others"></a>
-### Benchmark (Raspberry Pi) ###
+### Benchmark (Others) ###
 This application is used to check everything is ok and running as fast as expected. 
-The information about the maximum frame rate (**27fps** on Snapdragon 855 devices and **10fps** on Raspberry Pi 4) could be checked using this application. 
+The information about the maximum frame rate could be checked using this application. 
 It's open source and doesn't require registration or license key.
 
 For more information on how to build and run this sample please check [samples/c++/benchmark](samples/c++/benchmark/README.md).
 
 <a name="sample-application-recognizer-others"></a>
-### Recognizer (Raspberry Pi) ###
+### Recognizer (Others) ###
 This is a command line application used to detect and recognize a license plate from any JPEG/PNG/BMP image.
 
 For more information on how to build and run this sample please check [samples/c++/recognizer](samples/c++/recognizer/README.md).
+
+<a name="using-the-cpp-api-others"></a>
+## Using the C++ API ##
+The C++ API is defined at https://www.doubango.org/SDKs/credit-card-ocr/docs/cpp-api.html.
+
+```cpp
+	#include <ultimateCreditCard-SDK-API-PUBLIC.h> // Include the API header file
+
+	// JSON configuration string
+	// More info at https://www.doubango.org/SDKs/credit-card-ocr/docs/Configuration_options.html
+	static const char* __jsonConfig =
+	"{"
+	"\"debug_level\": \"info\","
+	"\"debug_write_input_image_enabled\": false,"
+	"\"debug_internal_data_path\": \".\","
+	""
+	"\"num_threads\": -1,"
+	"\"gpgpu_enabled\": true,"
+	""
+	"\"detect_roi\": [0, 0, 0, 0],"
+	"\"detect_minscore\": 0.5,"
+	""
+	"\"recogn_minscore\": 0.2,"
+	"\"recogn_score_type\": \"min\""
+	"}";
+
+	// Local variable
+	UltCreditCardSdkResult result;
+
+	// Initialize the engine (should be done once)
+	ULTCCARD_SDK_ASSERT((result = UltCreditCardSdkEngine::init(
+		__jsonConfig
+	)).isOK());
+
+	// Processing (detection + recognition)
+	// Call this function for every video frame
+	const void* imageData = nullptr;
+	ULTCCARD_SDK_ASSERT((*result_ = UltCreditCardSdkEngine::process(
+			ULTCCARD_SDK_IMAGE_TYPE_RGB24,
+			imageData,
+			imageWidth,
+			imageHeight
+		)).isOK());
+
+	// DeInit
+	// Call this function before exiting the app to free the allocate resources
+	// You must not call process() after calling this function
+	ULTCCARD_SDK_ASSERT((result = UltCreditCardSdkEngine::deInit()).isOK());
+```
+
+Again, please check the [sample applications](#sample-applications-others) for more information on how to use the API.
 
 <a name="technical-questions"></a>
  # Technical questions #

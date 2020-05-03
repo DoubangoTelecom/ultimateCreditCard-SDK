@@ -34,7 +34,7 @@ class ultimateCreditCardSdkPINVOKE {
     static ExceptionArgumentDelegate argumentNullDelegate = new ExceptionArgumentDelegate(SetPendingArgumentNullException);
     static ExceptionArgumentDelegate argumentOutOfRangeDelegate = new ExceptionArgumentDelegate(SetPendingArgumentOutOfRangeException);
 
-    [DllImport("ultimateCreditCardSdk", EntryPoint="SWIGRegisterExceptionCallbacks_ultimateCreditCardSdk")]
+    [DllImport("ultimateCreditCard-SDK", EntryPoint="SWIGRegisterExceptionCallbacks_ultimateCreditCardSdk")]
     public static extern void SWIGRegisterExceptionCallbacks_ultimateCreditCardSdk(
                                 ExceptionDelegate applicationDelegate,
                                 ExceptionDelegate arithmeticDelegate,
@@ -48,7 +48,7 @@ class ultimateCreditCardSdkPINVOKE {
                                 ExceptionDelegate overflowDelegate, 
                                 ExceptionDelegate systemExceptionDelegate);
 
-    [DllImport("ultimateCreditCardSdk", EntryPoint="SWIGRegisterExceptionArgumentCallbacks_ultimateCreditCardSdk")]
+    [DllImport("ultimateCreditCard-SDK", EntryPoint="SWIGRegisterExceptionArgumentCallbacks_ultimateCreditCardSdk")]
     public static extern void SWIGRegisterExceptionCallbacksArgument_ultimateCreditCardSdk(
                                 ExceptionArgumentDelegate argumentDelegate,
                                 ExceptionArgumentDelegate argumentNullDelegate,
@@ -170,7 +170,7 @@ class ultimateCreditCardSdkPINVOKE {
     public delegate string SWIGStringDelegate(string message);
     static SWIGStringDelegate stringDelegate = new SWIGStringDelegate(CreateString);
 
-    [DllImport("ultimateCreditCardSdk", EntryPoint="SWIGRegisterStringCallback_ultimateCreditCardSdk")]
+    [DllImport("ultimateCreditCard-SDK", EntryPoint="SWIGRegisterStringCallback_ultimateCreditCardSdk")]
     public static extern void SWIGRegisterStringCallback_ultimateCreditCardSdk(SWIGStringDelegate stringDelegate);
 
     static string CreateString(string cString) {
@@ -189,88 +189,94 @@ class ultimateCreditCardSdkPINVOKE {
   }
 
 
-  [DllImport("ultimateCreditCardSdk", EntryPoint="CSharp_ULTCCARD_SDK_VERSION_MAJOR_get")]
+  [DllImport("ultimateCreditCard-SDK", EntryPoint="CSharp_ULTCCARD_SDK_VERSION_MAJOR_get")]
   public static extern int ULTCCARD_SDK_VERSION_MAJOR_get();
 
-  [DllImport("ultimateCreditCardSdk", EntryPoint="CSharp_ULTCCARD_SDK_VERSION_MINOR_get")]
+  [DllImport("ultimateCreditCard-SDK", EntryPoint="CSharp_ULTCCARD_SDK_VERSION_MINOR_get")]
   public static extern int ULTCCARD_SDK_VERSION_MINOR_get();
 
-  [DllImport("ultimateCreditCardSdk", EntryPoint="CSharp_ULTCCARD_SDK_VERSION_MICRO_get")]
+  [DllImport("ultimateCreditCard-SDK", EntryPoint="CSharp_ULTCCARD_SDK_VERSION_MICRO_get")]
   public static extern int ULTCCARD_SDK_VERSION_MICRO_get();
 
-  [DllImport("ultimateCreditCardSdk", EntryPoint="CSharp_new_UltCreditCardSdkResult__SWIG_0")]
-  public static extern IntPtr new_UltCreditCardSdkResult__SWIG_0(int jarg1, string jarg2, string jarg3, uint jarg4);
+  [DllImport("ultimateCreditCard-SDK", EntryPoint="CSharp_new_UltCreditCardSdkResult__SWIG_0")]
+  public static extern IntPtr new_UltCreditCardSdkResult__SWIG_0();
 
-  [DllImport("ultimateCreditCardSdk", EntryPoint="CSharp_new_UltCreditCardSdkResult__SWIG_1")]
-  public static extern IntPtr new_UltCreditCardSdkResult__SWIG_1(int jarg1, string jarg2, string jarg3);
+  [DllImport("ultimateCreditCard-SDK", EntryPoint="CSharp_new_UltCreditCardSdkResult__SWIG_1")]
+  public static extern IntPtr new_UltCreditCardSdkResult__SWIG_1(int jarg1, string jarg2, string jarg3, uint jarg4);
 
-  [DllImport("ultimateCreditCardSdk", EntryPoint="CSharp_delete_UltCreditCardSdkResult")]
+  [DllImport("ultimateCreditCard-SDK", EntryPoint="CSharp_new_UltCreditCardSdkResult__SWIG_2")]
+  public static extern IntPtr new_UltCreditCardSdkResult__SWIG_2(int jarg1, string jarg2, string jarg3);
+
+  [DllImport("ultimateCreditCard-SDK", EntryPoint="CSharp_new_UltCreditCardSdkResult__SWIG_3")]
+  public static extern IntPtr new_UltCreditCardSdkResult__SWIG_3(HandleRef jarg1);
+
+  [DllImport("ultimateCreditCard-SDK", EntryPoint="CSharp_delete_UltCreditCardSdkResult")]
   public static extern void delete_UltCreditCardSdkResult(HandleRef jarg1);
 
-  [DllImport("ultimateCreditCardSdk", EntryPoint="CSharp_UltCreditCardSdkResult_code")]
+  [DllImport("ultimateCreditCard-SDK", EntryPoint="CSharp_UltCreditCardSdkResult_code")]
   public static extern int UltCreditCardSdkResult_code(HandleRef jarg1);
 
-  [DllImport("ultimateCreditCardSdk", EntryPoint="CSharp_UltCreditCardSdkResult_phrase")]
+  [DllImport("ultimateCreditCard-SDK", EntryPoint="CSharp_UltCreditCardSdkResult_phrase")]
   public static extern string UltCreditCardSdkResult_phrase(HandleRef jarg1);
 
-  [DllImport("ultimateCreditCardSdk", EntryPoint="CSharp_UltCreditCardSdkResult_json")]
+  [DllImport("ultimateCreditCard-SDK", EntryPoint="CSharp_UltCreditCardSdkResult_json")]
   public static extern string UltCreditCardSdkResult_json(HandleRef jarg1);
 
-  [DllImport("ultimateCreditCardSdk", EntryPoint="CSharp_UltCreditCardSdkResult_numCards")]
+  [DllImport("ultimateCreditCard-SDK", EntryPoint="CSharp_UltCreditCardSdkResult_numCards")]
   public static extern uint UltCreditCardSdkResult_numCards(HandleRef jarg1);
 
-  [DllImport("ultimateCreditCardSdk", EntryPoint="CSharp_UltCreditCardSdkResult_isOK")]
+  [DllImport("ultimateCreditCard-SDK", EntryPoint="CSharp_UltCreditCardSdkResult_isOK")]
   public static extern bool UltCreditCardSdkResult_isOK(HandleRef jarg1);
 
-  [DllImport("ultimateCreditCardSdk", EntryPoint="CSharp_new_UltCreditCardSdkParallelDeliveryCallback")]
+  [DllImport("ultimateCreditCard-SDK", EntryPoint="CSharp_new_UltCreditCardSdkParallelDeliveryCallback")]
   public static extern IntPtr new_UltCreditCardSdkParallelDeliveryCallback();
 
-  [DllImport("ultimateCreditCardSdk", EntryPoint="CSharp_delete_UltCreditCardSdkParallelDeliveryCallback")]
+  [DllImport("ultimateCreditCard-SDK", EntryPoint="CSharp_delete_UltCreditCardSdkParallelDeliveryCallback")]
   public static extern void delete_UltCreditCardSdkParallelDeliveryCallback(HandleRef jarg1);
 
-  [DllImport("ultimateCreditCardSdk", EntryPoint="CSharp_UltCreditCardSdkParallelDeliveryCallback_onNewResult")]
+  [DllImport("ultimateCreditCard-SDK", EntryPoint="CSharp_UltCreditCardSdkParallelDeliveryCallback_onNewResult")]
   public static extern void UltCreditCardSdkParallelDeliveryCallback_onNewResult(HandleRef jarg1, HandleRef jarg2);
 
-  [DllImport("ultimateCreditCardSdk", EntryPoint="CSharp_UltCreditCardSdkParallelDeliveryCallback_director_connect")]
+  [DllImport("ultimateCreditCard-SDK", EntryPoint="CSharp_UltCreditCardSdkParallelDeliveryCallback_director_connect")]
   public static extern void UltCreditCardSdkParallelDeliveryCallback_director_connect(HandleRef jarg1, UltCreditCardSdkParallelDeliveryCallback.SwigDelegateUltCreditCardSdkParallelDeliveryCallback_0 delegate0);
 
-  [DllImport("ultimateCreditCardSdk", EntryPoint="CSharp_UltCreditCardSdkEngine_init__SWIG_0")]
+  [DllImport("ultimateCreditCard-SDK", EntryPoint="CSharp_UltCreditCardSdkEngine_init__SWIG_0")]
   public static extern IntPtr UltCreditCardSdkEngine_init__SWIG_0(string jarg1);
 
-  [DllImport("ultimateCreditCardSdk", EntryPoint="CSharp_UltCreditCardSdkEngine_init__SWIG_1")]
+  [DllImport("ultimateCreditCard-SDK", EntryPoint="CSharp_UltCreditCardSdkEngine_init__SWIG_1")]
   public static extern IntPtr UltCreditCardSdkEngine_init__SWIG_1();
 
-  [DllImport("ultimateCreditCardSdk", EntryPoint="CSharp_UltCreditCardSdkEngine_deInit")]
+  [DllImport("ultimateCreditCard-SDK", EntryPoint="CSharp_UltCreditCardSdkEngine_deInit")]
   public static extern IntPtr UltCreditCardSdkEngine_deInit();
 
-  [DllImport("ultimateCreditCardSdk", EntryPoint="CSharp_UltCreditCardSdkEngine_process__SWIG_0")]
+  [DllImport("ultimateCreditCard-SDK", EntryPoint="CSharp_UltCreditCardSdkEngine_process__SWIG_0")]
   public static extern IntPtr UltCreditCardSdkEngine_process__SWIG_0(int jarg1, IntPtr jarg2, uint jarg3, uint jarg4, uint jarg5, int jarg6);
 
-  [DllImport("ultimateCreditCardSdk", EntryPoint="CSharp_UltCreditCardSdkEngine_process__SWIG_1")]
+  [DllImport("ultimateCreditCard-SDK", EntryPoint="CSharp_UltCreditCardSdkEngine_process__SWIG_1")]
   public static extern IntPtr UltCreditCardSdkEngine_process__SWIG_1(int jarg1, IntPtr jarg2, uint jarg3, uint jarg4, uint jarg5);
 
-  [DllImport("ultimateCreditCardSdk", EntryPoint="CSharp_UltCreditCardSdkEngine_process__SWIG_2")]
+  [DllImport("ultimateCreditCard-SDK", EntryPoint="CSharp_UltCreditCardSdkEngine_process__SWIG_2")]
   public static extern IntPtr UltCreditCardSdkEngine_process__SWIG_2(int jarg1, IntPtr jarg2, uint jarg3, uint jarg4);
 
-  [DllImport("ultimateCreditCardSdk", EntryPoint="CSharp_UltCreditCardSdkEngine_process__SWIG_3")]
+  [DllImport("ultimateCreditCard-SDK", EntryPoint="CSharp_UltCreditCardSdkEngine_process__SWIG_3")]
   public static extern IntPtr UltCreditCardSdkEngine_process__SWIG_3(int jarg1, IntPtr jarg2, IntPtr jarg3, IntPtr jarg4, uint jarg5, uint jarg6, uint jarg7, uint jarg8, uint jarg9, uint jarg10, int jarg11);
 
-  [DllImport("ultimateCreditCardSdk", EntryPoint="CSharp_UltCreditCardSdkEngine_process__SWIG_4")]
+  [DllImport("ultimateCreditCard-SDK", EntryPoint="CSharp_UltCreditCardSdkEngine_process__SWIG_4")]
   public static extern IntPtr UltCreditCardSdkEngine_process__SWIG_4(int jarg1, IntPtr jarg2, IntPtr jarg3, IntPtr jarg4, uint jarg5, uint jarg6, uint jarg7, uint jarg8, uint jarg9, uint jarg10);
 
-  [DllImport("ultimateCreditCardSdk", EntryPoint="CSharp_UltCreditCardSdkEngine_process__SWIG_5")]
+  [DllImport("ultimateCreditCard-SDK", EntryPoint="CSharp_UltCreditCardSdkEngine_process__SWIG_5")]
   public static extern IntPtr UltCreditCardSdkEngine_process__SWIG_5(int jarg1, IntPtr jarg2, IntPtr jarg3, IntPtr jarg4, uint jarg5, uint jarg6, uint jarg7, uint jarg8, uint jarg9);
 
-  [DllImport("ultimateCreditCardSdk", EntryPoint="CSharp_UltCreditCardSdkEngine_requestRuntimeLicenseKey__SWIG_0")]
+  [DllImport("ultimateCreditCard-SDK", EntryPoint="CSharp_UltCreditCardSdkEngine_requestRuntimeLicenseKey__SWIG_0")]
   public static extern IntPtr UltCreditCardSdkEngine_requestRuntimeLicenseKey__SWIG_0(bool jarg1);
 
-  [DllImport("ultimateCreditCardSdk", EntryPoint="CSharp_UltCreditCardSdkEngine_requestRuntimeLicenseKey__SWIG_1")]
+  [DllImport("ultimateCreditCard-SDK", EntryPoint="CSharp_UltCreditCardSdkEngine_requestRuntimeLicenseKey__SWIG_1")]
   public static extern IntPtr UltCreditCardSdkEngine_requestRuntimeLicenseKey__SWIG_1();
 
-  [DllImport("ultimateCreditCardSdk", EntryPoint="CSharp_UltCreditCardSdkEngine_warmUp")]
+  [DllImport("ultimateCreditCard-SDK", EntryPoint="CSharp_UltCreditCardSdkEngine_warmUp")]
   public static extern IntPtr UltCreditCardSdkEngine_warmUp(int jarg1);
 
-  [DllImport("ultimateCreditCardSdk", EntryPoint="CSharp_delete_UltCreditCardSdkEngine")]
+  [DllImport("ultimateCreditCard-SDK", EntryPoint="CSharp_delete_UltCreditCardSdkEngine")]
   public static extern void delete_UltCreditCardSdkEngine(HandleRef jarg1);
 }
 

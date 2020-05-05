@@ -104,7 +104,7 @@ namespace recognizer
          * JSON name: "detect_roi"
          * Default: [0.f, 0.f, 0.f, 0.f]
          * type: float[4]
-         * pattern: [left, width, top, height]
+         * pattern: [left, right, top, bottom]
          * More info: https://www.doubango.org/SDKs/credit-card-ocr/docs/Configuration_options.html#detect-roi
          */
         static readonly IList<float> CONFIG_DETECT_ROI = new[] { 0f, 0f, 0f, 0f };

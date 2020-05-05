@@ -100,7 +100,7 @@ public class CCardBenchmarkActivity extends AppCompatActivity {
      * JSON name: "detect_roi"
      * Default: [0.f, 0.f, 0.f, 0.f]
      * type: float[4]
-     * pattern: [left, width, top, height]
+     * pattern: [left, right, top, bottom]
      * More info: https://www.doubango.org/SDKs/credit-card-ocr/docs/Configuration_options.html#detect-roi
      */
     static final List<Float> CONFIG_DETECT_ROI = Arrays.asList(0.f, 0.f, 0.f, 0.f);

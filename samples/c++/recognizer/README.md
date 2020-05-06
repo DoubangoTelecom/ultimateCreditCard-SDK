@@ -1,3 +1,4 @@
+- [GPU acceleration](#gpu-acceleration)
 - [Pre-built binaries](#prebuilt)
 - [Building](#building)
   - [Windows](#building-windows)
@@ -15,6 +16,10 @@ If you don't want to build this sample and is looking for a quick way to check t
 our cloud-based solution at [https://www.doubango.org/webapps/credit-card-ocr/](https://www.doubango.org/webapps/credit-card-ocr/).
 
 This sample is open source and doesn't require registration or license key.
+
+<a name="gpu-acceleration"></a>
+# GPU acceleration #
+By default GPU acceleration is disabled. Check [here](../README.md#gpu-acceleration) for more information on how to enable.
 
 <a name="prebuilt"></a>
 # Pre-built binaries #

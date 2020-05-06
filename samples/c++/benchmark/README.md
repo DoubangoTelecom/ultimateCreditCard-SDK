@@ -1,3 +1,4 @@
+- [GPU acceleration](#gpu-acceleration)
 - [Peformance numbers](#peformance-numbers)
 - [Pre-built binaries](#prebuilt)
 - [Building](#building)
@@ -14,6 +15,10 @@ The information about the maximum frame rate could be checked using this applica
 It's open source and doesn't require registration or license key.
 
 More information about the benchmark rules at [https://www.doubango.org/SDKs/credit-card-ocr/docs/Benchmark.html](https://www.doubango.org/SDKs/credit-card-ocr/docs/Benchmark.html).
+
+<a name="gpu-acceleration"></a>
+# GPU acceleration #
+By default GPU acceleration is disabled. Check [here](../README.md#gpu-acceleration) for more information on how to enable.
 
 <a name="peformance-numbers"></a>
 # Peformance numbers #

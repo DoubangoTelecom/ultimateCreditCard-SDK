@@ -1,3 +1,4 @@
+- [GPU acceleration](#gpu-acceleration)
 - [Pre-built binaries](#prebuilt)
 - [Building](#building)
   - [Windows](#building-windows)
@@ -10,6 +11,10 @@
 
 This application is used as reference code for developers to show how to use the [C++ API](https://www.doubango.org/SDKs/credit-card-ocr/docs/cpp-api.html) to
 generate a runtime key. Once a runtime key is generated it must be [activated to produce a token](https://www.doubango.org/SDKs/LicenseManager/docs/Activation_use_cases.html).
+
+<a name="gpu-acceleration"></a>
+# GPU acceleration #
+By default GPU acceleration is disabled. Check [here](../README.md#gpu-acceleration) for more information on how to enable.
 
 <a name="prebuilt"></a>
 # Pre-built binaries #

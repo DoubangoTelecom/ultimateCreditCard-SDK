@@ -23,8 +23,8 @@ using org.doubango.ultimateCreditCard.Sdk;
 			[--tokendata <base64-license-token-data>]
 	Example:
 		recognizer \
-			--image ultimateMICR-SDK/assets/images/revolut.jpg \
-			--assets ultimateMICR-SDK/assets \
+			--image ultimateCCARD-SDK/assets/images/revolut.jpg \
+			--assets ultimateCCARD-SDK/assets \
 			--rectify true
 */
 
@@ -187,19 +187,38 @@ namespace recognizer
                 throw new System.IO.FileNotFoundException("File not found:" + file);
             }
             Bitmap image = new Bitmap(file);
+            int bytesPerPixel = Image.GetPixelFormatSize(image.PixelFormat) >> 3;
+            if (bytesPerPixel != 1 && bytesPerPixel != 3 && bytesPerPixel != 4)
+            {
+                throw new System.Exception("Invalid BPP:" + bytesPerPixel);
+            }
+
+            // Extract Exif orientation
+            const int ExifOrientationTagId = 0x112;
+            int orientation = 1;
+            if (Array.IndexOf(image.PropertyIdList, ExifOrientationTagId) > -1)
+            {
+                int orientation_ = image.GetPropertyItem(ExifOrientationTagId).Value[0];
+                if (orientation_ >= 1 && orientation_ <= 8)
+                {
+                    orientation = orientation_;
+                }
+            }
 
             // Processing: Detection + recognition
             //!\\ First inference is expected to be slow (deep learning models mapping to CPU/GPU memory)
-            BitmapData imageData = image.LockBits(new Rectangle(0, 0, image.Width, image.Height), ImageLockMode.ReadWrite, PixelFormat.Format24bppRgb);
+            BitmapData imageData = image.LockBits(new Rectangle(0, 0, image.Width, image.Height), ImageLockMode.ReadOnly, image.PixelFormat);
             try
             {
                 // For packed formats (RGB-family): https://www.doubango.org/SDKs/credit-card-ocr/docs/cpp-api.html#_CPPv4N21ultimateCreditCardSdk22UltCreditCardSdkEngine7processEK23ULTCCARD_SDK_IMAGE_TYPEPKvK6size_tK6size_tK6size_tKi
                 // For YUV formats (data from camera): https://www.doubango.org/SDKs/credit-card-ocr/docs/cpp-api.html#_CPPv4N21ultimateCreditCardSdk22UltCreditCardSdkEngine7processEK23ULTCCARD_SDK_IMAGE_TYPEPKvPKvPKvK6size_tK6size_tK6size_tK6size_tK6size_tK6size_tKi
                 result = CheckResult("Process", UltCreditCardSdkEngine.process(
-                        ULTCCARD_SDK_IMAGE_TYPE.ULTCCARD_SDK_IMAGE_TYPE_RGB24, // TODO(dmi): not correct. C# image decoder outputs BGR24 instead of RGB24
+                        (bytesPerPixel == 1) ? ULTCCARD_SDK_IMAGE_TYPE.ULTCCARD_SDK_IMAGE_TYPE_Y : (bytesPerPixel == 4 ? ULTCCARD_SDK_IMAGE_TYPE.ULTCCARD_SDK_IMAGE_TYPE_BGRA32 : ULTCCARD_SDK_IMAGE_TYPE.ULTCCARD_SDK_IMAGE_TYPE_RGB24), // TODO(dmi): not correct. C# image decoder outputs BGR24 instead of RGB24
                         imageData.Scan0,
-                        (uint)image.Width,
-                        (uint)image.Height
+                        (uint)imageData.Width,
+                        (uint)imageData.Height,
+                        (uint)(imageData.Stride / bytesPerPixel),
+                        orientation
                     ));
                 // Print result to console
                 Console.WriteLine("Result: {0}", result.json());

@@ -220,7 +220,7 @@ namespace recognizer
                 // For packed formats (RGB-family): https://www.doubango.org/SDKs/credit-card-ocr/docs/cpp-api.html#_CPPv4N21ultimateCreditCardSdk22UltCreditCardSdkEngine7processEK23ULTCCARD_SDK_IMAGE_TYPEPKvK6size_tK6size_tK6size_tKi
                 // For YUV formats (data from camera): https://www.doubango.org/SDKs/credit-card-ocr/docs/cpp-api.html#_CPPv4N21ultimateCreditCardSdk22UltCreditCardSdkEngine7processEK23ULTCCARD_SDK_IMAGE_TYPEPKvPKvPKvK6size_tK6size_tK6size_tK6size_tK6size_tK6size_tKi
                 result = CheckResult("Process", UltCreditCardSdkEngine.process(
-                        (bytesPerPixel == 1) ? ULTCCARD_SDK_IMAGE_TYPE.ULTCCARD_SDK_IMAGE_TYPE_Y : (bytesPerPixel == 4 ? ULTCCARD_SDK_IMAGE_TYPE.ULTCCARD_SDK_IMAGE_TYPE_BGRA32 : ULTCCARD_SDK_IMAGE_TYPE.ULTCCARD_SDK_IMAGE_TYPE_RGB24), // TODO(dmi): not correct. C# image decoder outputs BGR24 instead of RGB24
+                        (bytesPerPixel == 1) ? ULTCCARD_SDK_IMAGE_TYPE.ULTCCARD_SDK_IMAGE_TYPE_Y : (bytesPerPixel == 4 ? ULTCCARD_SDK_IMAGE_TYPE.ULTCCARD_SDK_IMAGE_TYPE_BGRA32 : ULTCCARD_SDK_IMAGE_TYPE.ULTCCARD_SDK_IMAGE_TYPE_BGR24),
                         imageData.Scan0,
                         (uint)imageData.Width,
                         (uint)imageData.Height,

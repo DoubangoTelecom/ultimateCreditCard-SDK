@@ -18,7 +18,6 @@ using org.doubango.ultimateCreditCard.Sdk;
 		recognizer \
 			---image <path-to-image-with-to-recognize> \
 			[--assets <path-to-assets-folder>] \
-			[--rectify <whether-to-enable-rectification-layer:true/false>] \
 			[--tokenfile <path-to-license-token-file>] \
 			[--tokendata <base64-license-token-data>]
 	Example:
@@ -87,6 +86,18 @@ namespace recognizer
          * More info: https://www.doubango.org/SDKs/credit-card-ocr/docs/Configuration_options.html#gpgpu-enabled
          */
         const bool CONFIG_GPGPU_ENABLED = true;
+
+        /**
+         * Whether to enable Image Enhancement for Low Contrast Document (IELCD).
+         * Technical description at https://www.doubango.org/SDKs/credit-card-ocr/docs/IELCD.html#ielcd.
+         * JSON name: "ielcd_enabled"
+         * Default: true for x86 CPUs and false for ARM CPUs.
+         * type: bool
+         * pattern: true | false
+         * Available since: 2.3.0
+         * More info: https://www.doubango.org/SDKs/credit-card-ocr/docs/Configuration_options.html#ielcd-enabled
+         */
+        const bool CONFIG_IELCD_ENABLED = true;
 
         /**
          * Define a threshold for the detection score. Any detection with a score below that threshold will be ignored. 0.f being poor confidence and 1.f excellent confidence.
@@ -292,6 +303,7 @@ namespace recognizer
 
                 num_threads = CONFIG_NUM_THREADS,
                 gpgpu_enabled = CONFIG_GPGPU_ENABLED,
+                ielcd_enabled = CONFIG_IELCD_ENABLED,
 
                 detect_minscore = CONFIG_DETECT_MINSCORE,
                 detect_roi = CONFIG_DETECT_ROI,

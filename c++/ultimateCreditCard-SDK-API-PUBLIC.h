@@ -14,7 +14,7 @@ ultimateCreditCard SDK public header
 #include <string>
 
 #define ULTCCARD_SDK_VERSION_MAJOR		2
-#define ULTCCARD_SDK_VERSION_MINOR		2
+#define ULTCCARD_SDK_VERSION_MINOR		3
 #define ULTCCARD_SDK_VERSION_MICRO		0
 
 // Windows's symbols export
@@ -142,6 +142,17 @@ namespace ultimateCreditCardSdk
 		* Available since: 2.1.0
 		*/
 		ULTCCARD_SDK_IMAGE_TYPE_Y,
+		/*! Each pixel is stored on 3 bytes. Each channel (B, G, R) is stored with 8 bits (1 byte) of precision (256 possible values).
+		* The B channel is stored at the lowest memory address followed by G then R channels. If you're using C# then,
+		* this is the same as <b>PixelFormat.Format24bppRgb</b>.
+		* Here is how the pixels are packed:
+		* \code{.cpp}
+		* const int pixel = (R & 0xff) << 16 | (G & 0xff) << 8 | (B & 0xff);
+		* \endcode
+		*
+		* Available since: 2.2.0
+		*/
+		ULTCCARD_SDK_IMAGE_TYPE_BGR24,
 	};
 
 	/*! Result returned by the \ref UltCreditCardSdkEngine "engine" at initialization, deInitialization and processing stages.
@@ -199,7 +210,7 @@ namespace ultimateCreditCardSdk
 	public:
 		virtual ~UltCreditCardSdkParallelDeliveryCallback() {  }
 		/*! Notification function to override in order to receive the results. */
-		virtual void onNewResult(const UltCreditCardSdkResult* result) const = 0;
+		virtual void onNewResult(const UltCreditCardSdkResult* newResult) const = 0;
 	};
 
 	/*! The Credit Card Deep Learning engine.
@@ -294,7 +305,8 @@ namespace ultimateCreditCardSdk
 
 #if ULTCCARD_SDK_OS_ANDROID && !defined(SWIG)
 		static void setAssetManager(AAssetManager* assetManager);
-		static void setJavaVM(JavaVM* vm);
+	private:
+		static bool s_bOweAAssetManager;
 #endif /* ULTCCARD_SDK_OS_ANDROID */
 	};
 

@@ -78,11 +78,13 @@ runtimeKey is a command line application with the following usage:
 ```
 runtimeKey \
       [--json <json-output:bool>] \
-      [--assets <path-to-assets-folder>]
+      [--assets <path-to-assets-folder>] \
+      [--type <host-type>]
 ```
 Options surrounded with **[]** are optional.
 - `--json` Whether to output the runtime license key as JSON string intead of raw string. Default: *true*.
 - `--assets` Path to the [assets](../../../assets) folder containing the configuration files and models. Default value is the current folder.
+- `--type` Defines how the license is attached to the machine/host. Possible values are *aws-instance* or *aws-byol*. Default: null. More info [here](../../../AWS.md).
 
 <a name="testing-examples"></a>
 ## Examples ##

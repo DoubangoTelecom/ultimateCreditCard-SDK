@@ -52,6 +52,7 @@ static const char* __jsonConfig =
 ""
 "\"num_threads\": -1,"
 "\"gpgpu_enabled\": true,"
+"\"ielcd_enabled\": false,"
 ""
 "\"detect_roi\": [0, 0, 0, 0],"
 "\"detect_minscore\": 0.5,"

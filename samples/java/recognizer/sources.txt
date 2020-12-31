@@ -1,0 +1,8 @@
+Recognizer.java
+../../../java/org/doubango/ultimateCreditCard/Sdk/ULTCCARD_SDK_IMAGE_TYPE.java
+../../../java/org/doubango/ultimateCreditCard/Sdk/UltCreditCardSdkEngine.java
+../../../java/org/doubango/ultimateCreditCard/Sdk/UltCreditCardSdkParallelDeliveryCallback.java
+../../../java/org/doubango/ultimateCreditCard/Sdk/UltCreditCardSdkResult.java
+../../../java/org/doubango/ultimateCreditCard/Sdk/ultimateCreditCardSdk.java
+../../../java/org/doubango/ultimateCreditCard/Sdk/ultimateCreditCardSdkConstants.java
+../../../java/org/doubango/ultimateCreditCard/Sdk/ultimateCreditCardSdkJNI.java

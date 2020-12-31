@@ -12,6 +12,7 @@
 			--image <path-to-image-with-to-recognize> \
 			[--parallel <whether-to-enable-parallel-mode:true/false>] \
 			[--rectify <whether-to-enable-rectification-layer:true/false>] \
+			[--ielcd <whether-to-enable-IELCD:true/false>] \
 			[--assets <path-to-assets-folder>] \
 			[--tokenfile <path-to-license-token-file>] \
 			[--tokendata <base64-license-token-data>]
@@ -67,7 +68,13 @@ int main(int argc, char *argv[])
 	// local variables
 	UltCreditCardSdkResult result(0, "OK", "{}");
 	std::string assetsFolder, licenseTokenData, licenseTokenFile;
+#if defined(__arm__) || defined(__thumb__) || defined(__TARGET_ARCH_ARM) || defined(__TARGET_ARCH_THUMB) || defined(_ARM) || defined(_M_ARM) || defined(_M_ARMT) || defined(__arm) || defined(__aarch64__)
 	bool isRectificationEnabled = false;
+	bool ielcdEnabled = false;
+#else
+	bool isRectificationEnabled = true;
+	bool ielcdEnabled = true;
+#endif
 	std::string pathFileImage;
 
 	// Parsing args
@@ -91,6 +98,9 @@ int main(int argc, char *argv[])
 	if (args.find("--rectify") != args.end()) {
 		isRectificationEnabled = (args["--rectify"].compare("true") == 0);
 	}	
+	if (args.find("--ielcd") != args.end()) {
+		ielcdEnabled = (args["--ielcd"] == "true");
+	}
 	if (args.find("--tokenfile") != args.end()) {
 		licenseTokenFile = args["--tokenfile"];
 #if defined(_WIN32)
@@ -107,6 +117,7 @@ int main(int argc, char *argv[])
 		jsonConfig += std::string(",\"assets_folder\": \"") + assetsFolder + std::string("\"");
 	}
 	jsonConfig += std::string(",\"recogn_rectify_enabled\": ") + (isRectificationEnabled ? "true" : "false");
+	jsonConfig += std::string(",\"ielcd_enabled\": ") + (ielcdEnabled ? "true" : "false");
 	if (!licenseTokenFile.empty()) {
 		jsonConfig += std::string(",\"license_token_file\": \"") + licenseTokenFile + std::string("\"");
 	}
@@ -169,7 +180,8 @@ static void printUsage(const std::string& message /*= ""*/)
 		"recognizer\n"
 		"\t--image <path-to-image-with-to-recognize> \n"
 		"\t[--assets <path-to-assets-folder>] \n"
-		"\t[--rectify <whether-to-enable-rectification-layer:true / false>] \n"
+		"\t[--rectify <whether-to-enable-rectification-layer:true/false>] \n"
+		"\t[--ielcd <whether-to-enable-IELCD:true/false>] \n"
 		"\t[--tokenfile <path-to-license-token-file>] \n"
 		"\t[--tokendata <base64-license-token-data>] \n"
 		"\n"
@@ -178,6 +190,7 @@ static void printUsage(const std::string& message /*= ""*/)
 		"--image: Path to the image(JPEG/PNG/BMP) to process. You can use default image at ../../../assets/images/revolut.jpg.\n\n"
 		"--assets: Path to the assets folder containing the configuration files and models. Default value is the current folder.\n\n"
 		"--rectify: Whether to enable the rectification layer. More info about the rectification layer at https ://www.doubango.org/SDKs/ccard/docs/Rectification_layer.html. Default: false.\n\n"
+		"--ielcd: Whether to enable Image Enhancement for Low Contrast Document (IELCD). More information at https://www.doubango.org/SDKs/credit-card-ocr/docs/IELCD.html. Default: true for x86 CPUs and false for ARM CPUs.\n\n"
 		"--tokenfile: Path to the file containing the base64 license token if you have one. If not provided then, the application will act like a trial version. Default: null.\n\n"
 		"--tokendata: Base64 license token if you have one. If not provided then, the application will act like a trial version. Default: null.\n\n"
 		"********************************************************************************\n"

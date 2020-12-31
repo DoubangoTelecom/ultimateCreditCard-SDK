@@ -96,6 +96,18 @@ public class CCardVideoRecognizerActivity extends CCardActivity {
     static final boolean CONFIG_GPGPU_ENABLED = true;
 
     /**
+     * Whether to enable Image Enhancement for Low Contrast Document (IELCD).
+     * Technical description at https://www.doubango.org/SDKs/credit-card-ocr/docs/IELCD.html#ielcd.
+     * JSON name: "ielcd_enabled"
+     * Default: true for x86 CPUs and false for ARM CPUs.
+     * type: bool
+     * pattern: true | false
+     * Available since: 2.3.0
+     * More info: https://www.doubango.org/SDKs/credit-card-ocr/docs/Configuration_options.html#ielcd-enabled
+     */
+    static final boolean CONFIG_IELCD_ENABLED = System.getProperty("os.arch").equals("amd64");
+
+    /**
      * Define a threshold for the detection score. Any detection with a score below that threshold will be ignored. 0.f being poor confidence and 1.f excellent confidence.
      * JSON name: "detect_minscore",
      * Default: 0.5f
@@ -206,6 +218,7 @@ public class CCardVideoRecognizerActivity extends CCardActivity {
 
             config.put("num_threads", CONFIG_NUM_THREADS);
             config.put("gpgpu_enabled", CONFIG_GPGPU_ENABLED);
+            config.put("ielcd_enabled", CONFIG_IELCD_ENABLED);
 
             config.put("detect_minscore", CONFIG_DETECT_MINSCORE);
             config.put("detect_roi", new JSONArray(getDetectROI()));

@@ -86,6 +86,7 @@ recognizer \
       --image <path-to-image-with-to-process> \
       [--assets <path-to-assets-folder>] \
       [--rectify <whether-to-enable-rectification-layer:true/false>] \
+      [--ielcd <whether-to-enable-IELCD:true/false>] \
       [--tokenfile <path-to-license-token-file>] \
       [--tokendata <base64-license-token-data>]
 ```
@@ -93,6 +94,7 @@ Options surrounded with **[]** are optional.
 - `--image` Path to the image(JPEG/PNG/BMP) to process. You can use default image at [../../../assets/images/revolut.jpg](../../../assets/images/revolut.jpg).
 - `--assets` Path to the [assets](../../../assets) folder containing the configuration files and models. Default value is the current folder.
 - `--rectify` Whether to enable the rectification layer. More info about the rectification layer at https://www.doubango.org/SDKs/credit-card-ocr/docs/Rectification_layer.html. Always enabled on x86_64 devices. Default: *false*.
+- `--ielcd` Whether to enable Image Enhancement for Low Contrast Document (IELCD). More information at https://www.doubango.org/SDKs/credit-card-ocr/docs/IELCD.html. Default: `true` for x86 CPUs and `false` for ARM CPUs.
 - `--tokenfile` Path to the file containing the base64 license token if you have one. If not provided then, the application will act like a trial version. Default: *null*.
 - `--tokendata` Base64 license token if you have one. If not provided then, the application will act like a trial version. Default: *null*.
 

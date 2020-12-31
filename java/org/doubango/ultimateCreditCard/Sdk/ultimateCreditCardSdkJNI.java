@@ -9,11 +9,6 @@
 package org.doubango.ultimateCreditCard.Sdk;
 
 public class ultimateCreditCardSdkJNI {
-
-  static {
-    System.loadLibrary("ultimateCreditCard_SDK");
-  }
-
   public final static native long new_UltCreditCardSdkResult__SWIG_0();
   public final static native long new_UltCreditCardSdkResult__SWIG_1(int jarg1, String jarg2, String jarg3, long jarg4);
   public final static native long new_UltCreditCardSdkResult__SWIG_2(int jarg1, String jarg2, String jarg3);

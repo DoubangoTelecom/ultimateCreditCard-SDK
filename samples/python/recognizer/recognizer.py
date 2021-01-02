@@ -27,10 +27,10 @@ import argparse
 import json
 import platform
 import os.path
-try:
-    import Image
-except ImportError:
-    from PIL import Image
+from PIL import Image, ExifTags
+
+# EXIF orientation TAG
+ORIENTATION_TAG = [orient for orient in ExifTags.TAGS.keys() if ExifTags.TAGS[orient] == 'Orientation']
 
 # Defines the default JSON configuration. More information at https://www.doubango.org/SDKs/credit-card-ocr/docs/Configuration_options.html
 JSON_CONFIG = {
@@ -95,6 +95,10 @@ if __name__ == "__main__":
         print(TAG + "Invalid mode: %s" % image.mode)
         assert False
 
+    # Read the EXIF orientation value
+    exif = image._getexif()
+    exifOrientation = exif[ORIENTATION_TAG[0]] if len(ORIENTATION_TAG) == 1 and exif != None else 1
+
     # Update JSON options using values from the command args
     if ASSETS:
         JSON_CONFIG["assets_folder"] = ASSETS
@@ -119,7 +123,9 @@ if __name__ == "__main__":
                     format,
                     image.tobytes(), # type(x) == bytes
                     width,
-                    height
+                    height,
+                    0, # stride
+                    exifOrientation
                     )
         )
 

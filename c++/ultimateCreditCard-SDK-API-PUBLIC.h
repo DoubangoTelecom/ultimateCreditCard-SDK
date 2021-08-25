@@ -14,8 +14,8 @@ ultimateCreditCard SDK public header
 #include <string>
 
 #define ULTCCARD_SDK_VERSION_MAJOR		2
-#define ULTCCARD_SDK_VERSION_MINOR		3
-#define ULTCCARD_SDK_VERSION_MICRO		1
+#define ULTCCARD_SDK_VERSION_MINOR		4
+#define ULTCCARD_SDK_VERSION_MICRO		0
 
 // Windows's symbols export
 #if defined(SWIG)

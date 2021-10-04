@@ -71,6 +71,10 @@ public class UltCreditCardSdkEngine {
     return new UltCreditCardSdkResult(ultimateCreditCardSdkJNI.UltCreditCardSdkEngine_process__SWIG_5(imageType.swigValue(), yPtr, uPtr, vPtr, widthInSamples, heightInSamples, yStrideInBytes, uStrideInBytes, vStrideInBytes), true);
   }
 
+  public static int exifOrientation(java.nio.ByteBuffer jpegMetaDataPtr, long jpegMetaDataSize) {
+    return ultimateCreditCardSdkJNI.UltCreditCardSdkEngine_exifOrientation(jpegMetaDataPtr, jpegMetaDataSize);
+  }
+
   public static UltCreditCardSdkResult requestRuntimeLicenseKey(boolean rawInsteadOfJSON) {
     return new UltCreditCardSdkResult(ultimateCreditCardSdkJNI.UltCreditCardSdkEngine_requestRuntimeLicenseKey__SWIG_0(rawInsteadOfJSON), true);
   }

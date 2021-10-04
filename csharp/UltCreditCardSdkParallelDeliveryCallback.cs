@@ -45,8 +45,8 @@ public class UltCreditCardSdkParallelDeliveryCallback : IDisposable {
     SwigDirectorConnect();
   }
 
-  public virtual void onNewResult(UltCreditCardSdkResult result) {
-    ultimateCreditCardSdkPINVOKE.UltCreditCardSdkParallelDeliveryCallback_onNewResult(swigCPtr, UltCreditCardSdkResult.getCPtr(result));
+  public virtual void onNewResult(UltCreditCardSdkResult newResult) {
+    ultimateCreditCardSdkPINVOKE.UltCreditCardSdkParallelDeliveryCallback_onNewResult(swigCPtr, UltCreditCardSdkResult.getCPtr(newResult));
   }
 
   private void SwigDirectorConnect() {
@@ -61,11 +61,11 @@ public class UltCreditCardSdkParallelDeliveryCallback : IDisposable {
     return hasDerivedMethod;
   }
 
-  private void SwigDirectoronNewResult(IntPtr result) {
-    onNewResult((result == IntPtr.Zero) ? null : new UltCreditCardSdkResult(result, false));
+  private void SwigDirectoronNewResult(IntPtr newResult) {
+    onNewResult((newResult == IntPtr.Zero) ? null : new UltCreditCardSdkResult(newResult, false));
   }
 
-  public delegate void SwigDelegateUltCreditCardSdkParallelDeliveryCallback_0(IntPtr result);
+  public delegate void SwigDelegateUltCreditCardSdkParallelDeliveryCallback_0(IntPtr newResult);
 
   private SwigDelegateUltCreditCardSdkParallelDeliveryCallback_0 swigDelegate0;
 

@@ -267,6 +267,9 @@ class ultimateCreditCardSdkPINVOKE {
   [DllImport("ultimateCreditCard-SDK", EntryPoint="CSharp_UltCreditCardSdkEngine_process__SWIG_5")]
   public static extern IntPtr UltCreditCardSdkEngine_process__SWIG_5(int jarg1, IntPtr jarg2, IntPtr jarg3, IntPtr jarg4, uint jarg5, uint jarg6, uint jarg7, uint jarg8, uint jarg9);
 
+  [DllImport("ultimateCreditCard-SDK", EntryPoint="CSharp_UltCreditCardSdkEngine_exifOrientation")]
+  public static extern int UltCreditCardSdkEngine_exifOrientation(IntPtr jarg1, uint jarg2);
+
   [DllImport("ultimateCreditCard-SDK", EntryPoint="CSharp_UltCreditCardSdkEngine_requestRuntimeLicenseKey__SWIG_0")]
   public static extern IntPtr UltCreditCardSdkEngine_requestRuntimeLicenseKey__SWIG_0(bool jarg1);
 

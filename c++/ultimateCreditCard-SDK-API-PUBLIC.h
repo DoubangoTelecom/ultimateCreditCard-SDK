@@ -14,7 +14,7 @@ ultimateCreditCard SDK public header
 #include <string>
 
 #define ULTCCARD_SDK_VERSION_MAJOR		2
-#define ULTCCARD_SDK_VERSION_MINOR		4
+#define ULTCCARD_SDK_VERSION_MINOR		5
 #define ULTCCARD_SDK_VERSION_MICRO		0
 
 // Windows's symbols export
@@ -290,6 +290,15 @@ namespace ultimateCreditCardSdk
 			const size_t uvPixelStrideInBytes = 0,
 			const int exifOrientation = 1
 		);
+
+		/*! Retrieve EXIF orientation value from JPEG meta-data.
+			\param jpegMetaDataPtr Pointer to the meta-data.
+			\param jpegMetaDataSize Size of the meta-data.
+			\returns Image's EXIF/JPEG orientation. Must be within [1, 8]. More information at https://www.impulseadventure.com/photo/exif-orientation.html.
+
+			Available since: 2.5.0
+		*/
+		static int exifOrientation(const void* jpegMetaDataPtr, const size_t jpegMetaDataSize);
 		
 		/*! Build a unique runtime license key associated to this device.
 			You must \ref init "initialize" the engine before calling this function.

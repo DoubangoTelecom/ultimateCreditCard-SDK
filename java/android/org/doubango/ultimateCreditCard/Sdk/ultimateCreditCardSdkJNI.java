@@ -38,13 +38,14 @@ public class ultimateCreditCardSdkJNI {
   public final static native long UltCreditCardSdkEngine_process__SWIG_3(int jarg1, java.nio.ByteBuffer jarg2, java.nio.ByteBuffer jarg3, java.nio.ByteBuffer jarg4, long jarg5, long jarg6, long jarg7, long jarg8, long jarg9, long jarg10, int jarg11);
   public final static native long UltCreditCardSdkEngine_process__SWIG_4(int jarg1, java.nio.ByteBuffer jarg2, java.nio.ByteBuffer jarg3, java.nio.ByteBuffer jarg4, long jarg5, long jarg6, long jarg7, long jarg8, long jarg9, long jarg10);
   public final static native long UltCreditCardSdkEngine_process__SWIG_5(int jarg1, java.nio.ByteBuffer jarg2, java.nio.ByteBuffer jarg3, java.nio.ByteBuffer jarg4, long jarg5, long jarg6, long jarg7, long jarg8, long jarg9);
+  public final static native int UltCreditCardSdkEngine_exifOrientation(java.nio.ByteBuffer jarg1, long jarg2);
   public final static native long UltCreditCardSdkEngine_requestRuntimeLicenseKey__SWIG_0(boolean jarg1);
   public final static native long UltCreditCardSdkEngine_requestRuntimeLicenseKey__SWIG_1();
   public final static native long UltCreditCardSdkEngine_warmUp(int jarg1);
   public final static native void delete_UltCreditCardSdkEngine(long jarg1);
 
-  public static void SwigDirector_UltCreditCardSdkParallelDeliveryCallback_onNewResult(UltCreditCardSdkParallelDeliveryCallback self, long result) {
-    self.onNewResult((result == 0) ? null : new UltCreditCardSdkResult(result, false));
+  public static void SwigDirector_UltCreditCardSdkParallelDeliveryCallback_onNewResult(UltCreditCardSdkParallelDeliveryCallback self, long newResult) {
+    self.onNewResult((newResult == 0) ? null : new UltCreditCardSdkResult(newResult, false));
   }
 
   private final static native void swig_module_init();

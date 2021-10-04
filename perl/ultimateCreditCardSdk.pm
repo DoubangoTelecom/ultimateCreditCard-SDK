@@ -134,6 +134,7 @@ use vars qw(@ISA %OWNER %ITERATORS %BLESSEDMEMBERS);
 *init = *ultimateCreditCardSdkc::UltCreditCardSdkEngine_init;
 *deInit = *ultimateCreditCardSdkc::UltCreditCardSdkEngine_deInit;
 *process = *ultimateCreditCardSdkc::UltCreditCardSdkEngine_process;
+*exifOrientation = *ultimateCreditCardSdkc::UltCreditCardSdkEngine_exifOrientation;
 *requestRuntimeLicenseKey = *ultimateCreditCardSdkc::UltCreditCardSdkEngine_requestRuntimeLicenseKey;
 *warmUp = *ultimateCreditCardSdkc::UltCreditCardSdkEngine_warmUp;
 sub DESTROY {

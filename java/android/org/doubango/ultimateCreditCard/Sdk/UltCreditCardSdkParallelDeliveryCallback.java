@@ -55,8 +55,8 @@ public class UltCreditCardSdkParallelDeliveryCallback {
     ultimateCreditCardSdkJNI.UltCreditCardSdkParallelDeliveryCallback_director_connect(this, swigCPtr, swigCMemOwn, true);
   }
 
-  public void onNewResult(UltCreditCardSdkResult result) {
-    ultimateCreditCardSdkJNI.UltCreditCardSdkParallelDeliveryCallback_onNewResult(swigCPtr, this, UltCreditCardSdkResult.getCPtr(result), result);
+  public void onNewResult(UltCreditCardSdkResult newResult) {
+    ultimateCreditCardSdkJNI.UltCreditCardSdkParallelDeliveryCallback_onNewResult(swigCPtr, this, UltCreditCardSdkResult.getCPtr(newResult), newResult);
   }
 
 }

@@ -145,6 +145,8 @@ class UltCreditCardSdkEngine(_object):
     if _newclass:deInit = staticmethod(_ultimateCreditCardSdk.UltCreditCardSdkEngine_deInit)
     __swig_getmethods__["process"] = lambda x: _ultimateCreditCardSdk.UltCreditCardSdkEngine_process
     if _newclass:process = staticmethod(_ultimateCreditCardSdk.UltCreditCardSdkEngine_process)
+    __swig_getmethods__["exifOrientation"] = lambda x: _ultimateCreditCardSdk.UltCreditCardSdkEngine_exifOrientation
+    if _newclass:exifOrientation = staticmethod(_ultimateCreditCardSdk.UltCreditCardSdkEngine_exifOrientation)
     __swig_getmethods__["requestRuntimeLicenseKey"] = lambda x: _ultimateCreditCardSdk.UltCreditCardSdkEngine_requestRuntimeLicenseKey
     if _newclass:requestRuntimeLicenseKey = staticmethod(_ultimateCreditCardSdk.UltCreditCardSdkEngine_requestRuntimeLicenseKey)
     __swig_getmethods__["warmUp"] = lambda x: _ultimateCreditCardSdk.UltCreditCardSdkEngine_warmUp
@@ -165,6 +167,10 @@ UltCreditCardSdkEngine_deInit = _ultimateCreditCardSdk.UltCreditCardSdkEngine_de
 def UltCreditCardSdkEngine_process(*args):
   return _ultimateCreditCardSdk.UltCreditCardSdkEngine_process(*args)
 UltCreditCardSdkEngine_process = _ultimateCreditCardSdk.UltCreditCardSdkEngine_process
+
+def UltCreditCardSdkEngine_exifOrientation(*args):
+  return _ultimateCreditCardSdk.UltCreditCardSdkEngine_exifOrientation(*args)
+UltCreditCardSdkEngine_exifOrientation = _ultimateCreditCardSdk.UltCreditCardSdkEngine_exifOrientation
 
 def UltCreditCardSdkEngine_requestRuntimeLicenseKey(rawInsteadOfJSON=False):
   return _ultimateCreditCardSdk.UltCreditCardSdkEngine_requestRuntimeLicenseKey(rawInsteadOfJSON)

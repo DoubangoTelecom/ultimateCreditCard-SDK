@@ -86,6 +86,11 @@ public class UltCreditCardSdkEngine : IDisposable {
     return ret;
   }
 
+  public static int exifOrientation(IntPtr jpegMetaDataPtr, uint jpegMetaDataSize) {
+    int ret = ultimateCreditCardSdkPINVOKE.UltCreditCardSdkEngine_exifOrientation(jpegMetaDataPtr, jpegMetaDataSize);
+    return ret;
+  }
+
   public static UltCreditCardSdkResult requestRuntimeLicenseKey(bool rawInsteadOfJSON) {
     UltCreditCardSdkResult ret = new UltCreditCardSdkResult(ultimateCreditCardSdkPINVOKE.UltCreditCardSdkEngine_requestRuntimeLicenseKey__SWIG_0(rawInsteadOfJSON), true);
     return ret;

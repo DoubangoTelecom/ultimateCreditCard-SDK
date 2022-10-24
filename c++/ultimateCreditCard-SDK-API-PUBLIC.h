@@ -14,7 +14,7 @@ ultimateCreditCard SDK public header
 #include <string>
 
 #define ULTCCARD_SDK_VERSION_MAJOR		2
-#define ULTCCARD_SDK_VERSION_MINOR		5
+#define ULTCCARD_SDK_VERSION_MINOR		6
 #define ULTCCARD_SDK_VERSION_MICRO		0
 
 // Windows's symbols export
